@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>💖 [Your Name Here] - MySpace Clone</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h1>💖 [Your Name Here] 💖</h1>
+  <p class="welcome">Welcome to my totally awesome page!</p>
+</header>
+
+<main>
+  <section class="profile">
+    <img src="https://via.placeholder.com/150" alt="Profile Picture">
+    <div class="profile-text">
+      <h2>About Me</h2>
+      <p><strong>Mood:</strong> Happy 😎</p>
+      <p><strong>Favorite Quote:</strong> "Dream big, sparkle more."</p>
+    </div>
+  </section>
+
+  <section class="top8">
+    <h2>Top 8 Friends</h2>
+    <div class="friends-grid">
+      <!-- Blank Top 8 slots -->
+    </div>
+  </section>
+
+  <section class="guestbook">
+    <h2>Guestbook</h2>
+    <form method="POST" action="https://staticman3.herokuapp.com/v3/entry/github/Jurgl3/myspace-clone/main/comments">
+      <input name="name" type="text" placeholder="Your name" required><br><br>
+      <textarea name="message" rows="5" placeholder="Your comment..." required></textarea><br><br>
+      <button type="submit">Submit Comment</button>
+    </form>
+    <p>Your comment will be visible once approved!</p>
+  </section>
+</main>
+
+<footer>
+  <p>✨ Best viewed with nostalgia glasses ✨</p>
+</footer>
+
+</body>
+</html>
