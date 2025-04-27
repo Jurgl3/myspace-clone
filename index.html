@@ -36,6 +36,12 @@
       <textarea name="message" rows="5" placeholder="Your comment..." required></textarea><br><br>
       <button type="submit">Submit Comment</button>
     </form>
+    <div id="comments-list">
+  <h3>Comments:</h3>
+  <div id="comments-container">
+    <!-- Fetched comments will appear here -->
+  </div>
+</div>
     <p>Your comment will be visible once approved!</p>
   </section>
 </main>
@@ -43,6 +49,31 @@
 <footer>
   <p>✨ Best viewed with nostalgia glasses ✨</p>
 </footer>
+  
+<script>
+async function fetchComments() {
+  const container = document.getElementById('comments-container');
+  try {
+    const response = await fetch('https://Jurgl3.github.io/myspace-clone/comments/index.json');
+    const comments = await response.json();
+    
+    comments.forEach(comment => {
+      const commentDiv = document.createElement('div');
+      commentDiv.classList.add('comment');
+      commentDiv.innerHTML = `
+        <p><strong>${comment.name}</strong> said:</p>
+        <p>${comment.message}</p>
+        <hr>
+      `;
+      container.appendChild(commentDiv);
+    });
+  } catch (error) {
+    console.error('Failed to load comments', error);
+    container.innerHTML = "<p>Comments are loading or unavailable.</p>";
+  }
+}
+fetchComments();
+</script>
 
 </body>
 </html>
